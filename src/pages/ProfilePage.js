@@ -17,7 +17,7 @@ const ProfilePage = () => {
 
     const fetchUserData = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/profile", {
+        const response = await axios.get("https://blog-server-rfve.onrender.com/api/profile", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setUser(response.data.user);
@@ -60,7 +60,7 @@ const ProfilePage = () => {
         <div className="col-md-4">
           <div className="card" style={{ width: "15rem" }}>
             <img
-              src={`http://localhost:5000/uploads/${user.profileImage}`}
+              src={`https://blog-server-rfve.onrender.com/uploads/${user.profileImage}`}
               alt="Profile"
               className="card-img-top"
               style={{

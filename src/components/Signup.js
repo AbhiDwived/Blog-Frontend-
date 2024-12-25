@@ -26,7 +26,7 @@ const SignUp = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/signup",
+        "https://blog-server-rfve.onrender.com/api/signup",
         formData,
         {
           headers: {

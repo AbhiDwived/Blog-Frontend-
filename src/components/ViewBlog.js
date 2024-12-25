@@ -13,7 +13,7 @@ const ViewBlog = () => {
 
   const fetchBlogs = async (id) => {
     try {
-      const response = await axios.get("http://localhost:5000/api/blogs", {
+      const response = await axios.get("https://blog-server-rfve.onrender.com/api/blogs", {
         headers: { Authorization: `Bearer ${token}` },
       });
 

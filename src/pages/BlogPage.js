@@ -9,7 +9,7 @@ const BlogPage = ({ match }) => {
     const fetchBlog = async () => {
       try {
         const { data } = await axios.get(
-          `http://localhost:5000/blogs/${blogId}`
+          `https://blog-server-rfve.onrender.com/blogs/${blogId}`
         );
         setBlog(data);
       } catch (error) {
@@ -26,7 +26,7 @@ const BlogPage = ({ match }) => {
         <div>
           <h1>{blog.title}</h1>
           <img
-            src={`http://localhost:5000/api/${blog.image}`}
+            src={`https://blog-server-rfve.onrender.com/api/${blog.image}`}
             alt={blog.title}
           />
           <p>{blog.description}</p>

@@ -19,7 +19,7 @@ const UpdateProfilePage = () => {
 
     const fetchUserData = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/profile", {
+        const response = await axios.get("https://blog-server-rfve.onrender.com/api/profile", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setUser(response.data.user);
@@ -45,7 +45,7 @@ const UpdateProfilePage = () => {
     if (profileImage) formData.append("profileImage", profileImage);
 
     try {
-      await axios.put("http://localhost:5000/api/profile", formData, {
+      await axios.put("https://blog-server-rfve.onrender.com/api/profile", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${token}`,

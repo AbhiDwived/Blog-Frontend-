@@ -30,7 +30,7 @@ const Dashboard = () => {
     try {
       if (isEditMode && currentBlogId) {
         await axios.put(
-          `http://localhost:5000/api/blogs/${currentBlogId}`,
+          `https://blog-server-rfve.onrender.com/api/blogs/${currentBlogId}`,
           formData,
           {
             headers: {
@@ -41,7 +41,7 @@ const Dashboard = () => {
         );
         alert("Blog updated successfully!");
       } else {
-        await axios.post("http://localhost:5000/api/blogs", formData, {
+        await axios.post("https://blog-server-rfve.onrender.com/api/blogs", formData, {
           headers: {
             "Content-Type": "multipart/form-data",
             Authorization: `Bearer ${token}`,
@@ -77,7 +77,7 @@ const Dashboard = () => {
   const fetchUser = async () => {
     try {
       setLoading(true);
-      const data = await axios.get("http://localhost:5000/api/profile", {
+      const data = await axios.get("https://blog-server-rfve.onrender.com/api/profile", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setUser(data.data.user);
@@ -91,7 +91,7 @@ const Dashboard = () => {
   const fetchBlogs = async () => {
     try {
       setLoading(true);
-      const blogData = await axios.get("http://localhost:5000/api/blogs", {
+      const blogData = await axios.get("https://blog-server-rfve.onrender.com/api/blogs", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setBlogs(blogData.data.blogs);
@@ -115,7 +115,7 @@ const Dashboard = () => {
 
     try {
       setLoading(true);
-      await axios.delete(`http://localhost:5000/api/blogs/${id}`, {
+      await axios.delete(`https://blog-server-rfve.onrender.com/api/blogs/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setBlogs(blogs.filter((blog) => blog.id !== id));
@@ -132,7 +132,7 @@ const Dashboard = () => {
     navigate("/");
   };
 
-  const imageUrl = `http://localhost:5000/uploads/${user.profileImage}`;
+  const imageUrl = `https://blog-server-rfve.onrender.com/uploads/${user.profileImage}`;
 
   return (
     <div className="container mt-4">
@@ -266,7 +266,7 @@ const Dashboard = () => {
               <div className="card m-2" key={index} style={{ width: "18rem" }}>
                 <img
                   className="card-img-top"
-                  src={blog.image}
+                  src={`https://blog-server-rfve.onrender.com/api/${blog.image}`}
                   alt="Card image cap"
                   style={{ height: "15rem", objectFit: "cover" }}
                 />

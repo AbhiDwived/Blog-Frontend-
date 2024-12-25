@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/blogs";
+const API_URL = "https://blog-server-rfve.onrender.com/api/blogs";
 
 export const getBlogs = async () => {
   return await axios.get(API_URL);
